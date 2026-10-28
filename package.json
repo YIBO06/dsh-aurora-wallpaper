@@ -1,0 +1,59 @@
+{
+  "name": "dsh-aurora-wallpaper",
+  "version": "1.0.0",
+  "description": "Generative aurora wallpaper for DeepSeek Harness: animated color fields with 13 palettes, breathing and motion controls, plus your own photo or video as the backdrop.",
+  "type": "module",
+  "license": "MIT",
+  "author": "YIBO06",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YIBO06/dsh-aurora-wallpaper.git"
+  },
+  "homepage": "https://github.com/YIBO06/dsh-aurora-wallpaper#readme",
+  "bugs": {
+    "url": "https://github.com/YIBO06/dsh-aurora-wallpaper/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek",
+    "harness",
+    "wallpaper",
+    "background",
+    "aurora",
+    "theme"
+  ],
+  "engines": {
+    "dsh": ">=0.2.1-rc.3"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-theme"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
